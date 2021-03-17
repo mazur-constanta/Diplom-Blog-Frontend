@@ -1,0 +1,36 @@
+.nav {
+    font-family: 'Roboto', 'Arial', sans-serif; 
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+}
+
+#brand {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Cabin Sketch', cursive, 'Arial', sans-serif;
+    font-size: 30px;
+    color: #707070;
+}
+
+#nav-header {
+    font-weight: 450;
+}
+
+.nav-footer {
+    font-weight: 450;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+
+.link-footer {
+    color: #707070;
+}
+
+.link-footer:hover {
+    color: #404040;
+}
