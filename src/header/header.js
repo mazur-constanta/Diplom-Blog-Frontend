@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import arrow from '../images/arrow.svg';
-import welcome from '../images/welcome.svg';
+// import welcome from '../images/welcome.svg';
 import { Container, Nav, Navbar, Form, Button, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './header.css';
@@ -19,13 +19,13 @@ export default class Header extends Component {
                 <Container>
                     <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" id="nav">
                             <Navbar.Brand href="/" className="ml-start" id="brand"> 
-                                <img 
+                                {/* <img 
                                     src={welcome}
                                     height="40"
                                     width="80"
                                     alt="Child"
-                                />{' '}
-                                {/* HappyMom */}
+                                />{' '} */}
+                                HappyMom
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="resonsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
