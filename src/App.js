@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './header/header';
+import Main from './main/main';
 
 const App = () => {
   return (
         <div className="main">
-            <Header />
+            <Main />
         </div>
     );
 } 

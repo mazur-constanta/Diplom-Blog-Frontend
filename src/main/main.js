@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import welcome from '../images/welcome.svg';
 import { Container, Nav, Navbar, Form, Button, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './header.css';
+import './main.css';
 
 import HomePage from '../pages/home';
 import AboutPage from '../pages/about';
@@ -12,19 +12,13 @@ import ArticlePage from '../pages/article-page';
 import ContactsPage from '../pages/contacts';
 import NotFoundPage from '../pages/not-found';
 
-export default class Header extends Component {
+export default class Main extends Component {
     render() {
         return (
             <>
                 <Container>
                     <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" id="nav">
                             <Navbar.Brand href="/" className="ml-start" id="brand"> 
-                                {/* <img 
-                                    src={welcome}
-                                    height="40"
-                                    width="80"
-                                    alt="Child"
-                                />{' '} */}
                                 HappyMom
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="resonsive-navbar-nav" />
