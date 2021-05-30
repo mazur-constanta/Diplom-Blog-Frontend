@@ -1,19 +1,17 @@
 import React from 'react';
+import AddCommentForm from './add-comment-form';
 
-const CommentsList = ({ comments = []}) => {
-    return(
-        <>
-            <h4>Комментарии:</h4>
-            <div className="comments-list">
-                {comments.map((comment, key) => {
-                        return <div key={key}>
-                                <h6>{comment.username}</h6>
-                                <p>{comment.text}</p>
-                        </div>
-                })}
+const CommentsList = ({ comments, articleName, setArticleInfo }) => (
+    <>
+    <h4>Комментарии:</h4>
+    {comments.map((comment, key) => (
+            <div className="comments-list" key={key}>
+                    <h6>{comment.postedBy}</h6>
+                    <p>{comment.text}</p>
             </div>
-        </>
-    );
-}
+    ))}
+    <AddCommentForm articleName={articleName} setArticleInfo={setArticleInfo} />
+    </>
+);
 
 export default CommentsList;

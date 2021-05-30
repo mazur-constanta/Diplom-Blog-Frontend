@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-// import arrow from '../images/arrow.svg';
-// import welcome from '../images/welcome.svg';
-import { Container, Nav, Navbar, Form, Button, Row, Col } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './main.css';
-
+import { Container, Nav, Navbar, Form, Button, Row, Col } from 'react-bootstrap';
 import HomePage from '../pages/home';
 import AboutPage from '../pages/about';
-import ArticlesListPage from '../pages/articles-list';
+import ArticlesListPage from '../pages/articles-list-page';
 import ArticlePage from '../pages/article-page';
 import ContactsPage from '../pages/contacts';
 import NotFoundPage from '../pages/not-found';
+import './main.css';
+
 
 export default class Main extends Component {
     render() {
@@ -26,7 +24,7 @@ export default class Main extends Component {
                                 <Nav className="ml-auto" id="nav-header">
                                     <Nav.Link href="/" className="mr-5">ГЛАВНАЯ</Nav.Link>
                                     <Nav.Link href="/about" className="mr-5">О НАС</Nav.Link>
-                                    <Nav.Link href="/articles-list" className="mr-5">ПОСТЫ</Nav.Link>
+                                    <Nav.Link href="/articles" className="mr-5">СТАТЬИ</Nav.Link>
                                     <Nav.Link href="/contacts" className="mr-5">КОНТАКТЫ</Nav.Link>
                                 </Nav>   
                                 <Form inline className="ml-auto">
@@ -49,8 +47,8 @@ export default class Main extends Component {
                     <Switch>
                         <Route path="/" component={HomePage} exact />
                         <Route path="/about" component={AboutPage} />
-                        <Route path="/articles-list" component={ArticlesListPage} />
-                        <Route path="/article/:name" component={ArticlePage} />
+                        <Route path="/articles" exact component={ArticlesListPage} />
+                        <Route path="/articles/:name" component={ArticlePage} />
                         <Route path="/contacts" component={ContactsPage} />
                         <Route component={NotFoundPage} />
                     </Switch>
@@ -71,18 +69,6 @@ export default class Main extends Component {
                                     <p>Copyright 2021 © German G.</p></h6>
                                 </Col>
                             </Row>
-                            {/* <Row>
-                                <Col>
-                                    <Nav.Link href="/" className="link-footer">
-                                        <img 
-                                            src={arrow}
-                                            height="40"
-                                            width="80"
-                                            alt="Child"
-                                        />
-                                    </Nav.Link>
-                                </Col>
-                            </Row> */}
                             <Row>
                                 <Col>
                                     <Nav.Link href="/" className="link-footer">
