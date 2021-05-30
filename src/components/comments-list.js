@@ -10,7 +10,7 @@ const CommentsList = ({ comments, articleName, setArticleInfo }) => (
                     <p>{comment.text}</p>
             </div>
     ))}
-    <AddCommentForm articleName={articleName} setArticleInfo={setArticleInfo} />
+    <AddCommentForm articleName={articleName} setArticleIndo={setArticleInfo} />
     </>
 );
 

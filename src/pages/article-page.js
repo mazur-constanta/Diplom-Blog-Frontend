@@ -4,8 +4,6 @@ import UpvotesSection from '../components/upvotes-section';
 import articles from './article-content';
 import NotFoundPage from '../pages/not-found';
 import OtherArticles from './other-articles.js';
-
-
 import { Container } from 'react-bootstrap';
 
 const ArticlePage = ({ match }) => {
@@ -38,7 +36,7 @@ const ArticlePage = ({ match }) => {
             {matchingArticle.content.map((paragraph, key) => <p key={key}>{paragraph}</p>)}
             <CommentsList comments={articleInfo.comments} articleName={name} setArticleInfo={setArticleInfo} />
             <h4>Другие статьи:</h4>
-            <OtherArticles articles={otherArticles} />
+            <OtherArticles className="mb-5" articles={otherArticles} />
         </Container>
         </>
     ) : (

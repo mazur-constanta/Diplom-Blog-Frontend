@@ -1,11 +1,11 @@
 import img1 from './../images/4.jpg';
 import img2 from './../images/5.jpg';
-import img3 from './../images/6.jpg';
+import img3 from './../images/1.jpg';
 
 const articles = [
     {
         _id: 1,
-        name: 'childs-happiness',
+        name: 'child-happiness',
         src: img1,
         title: 'Ребенок и так счастлив, потому что у него нет забот..',
         content: [
