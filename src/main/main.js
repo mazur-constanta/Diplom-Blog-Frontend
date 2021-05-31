@@ -36,7 +36,7 @@ export default class Main extends Component {
                                         width="50%"
                                     />
                                     <Button variant="outline-dark" className="m-auto" id="btn-css">
-                                        Поиск
+                                        Найти
                                     </Button>
                                 </Form>
                             </Navbar.Collapse>
@@ -58,15 +58,15 @@ export default class Main extends Component {
                             <Row>
                                 <Col className="mt-5 mb-3">
                                     <h6>Телефон:
-                                    <p>(+373)68-041-683</p></h6>
+                                    <p>(+373)60-040-080</p></h6>
                                     <h6>Email:
-                                    <p>constancegerman@gmail.com</p></h6>
+                                    <p>mothers.helper@gmail.com</p></h6>
                                 </Col>
                                 <Col className="mt-5 mb-3">
                                     <h6>Сайт разработан с целью поддержки 
-                                    <p>и развития молодых матерей и их детей.</p></h6>
+                                    <p>и развития молодых матерей и их чудесных детей.</p></h6>
                                     <h6>Все права защищены.
-                                    <p>Copyright 2021 © German G.</p></h6>
+                                    <p>Copyright 2021 © German С.</p></h6>
                                 </Col>
                             </Row>
                             <Row>

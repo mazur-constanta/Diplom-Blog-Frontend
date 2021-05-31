@@ -56,20 +56,13 @@
 //     }
 // }
 
-import React, { useState } from 'react';
+import React from 'react';
 import Video from "../images/childness.mp4";
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight } from './home-page-elements';
+import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP } from './home-page-elements';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
-
-    const [hover, setHover] = useState(false);
-
-    const onHover = () => {
-        setHover(!hover);
-    }
-
     return (
         <>
         <HeroContainer>
@@ -77,24 +70,17 @@ const HomePage = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Быть мамой - дар, быть мамой- искусство, быть мамой - счастье..</HeroH1>
-                <HeroP>Целая вселенная в одном человеке. Давайте знакомится ближе?</HeroP>
-                <HeroBtnWrapper>
-                    <Link to="/about">
-                    <Button 
-                        onMouseEnter={onHover} 
-                        onMouseLeave={onHover}
-                        primary='true'
-                        dark='true'
-                    >
-                    Больше {hover ? <ArrowForward /> : <ArrowRight />}
-                    </Button>
-                    </Link>
-                </HeroBtnWrapper>
+                <HeroH1>Быть мамой - дар. Быть мамой- счастье. Быть мамой - искусство..</HeroH1>
+                <HeroP>Целая вселенная в одном человеке. Давайте знакомиться ближе?</HeroP>
+                <Link to="/about">
+                <Button variant="outline-light" className="m-auto" id="btn-css">
+                Больше
+                </Button>
+                </Link>
             </HeroContent>
         </HeroContainer>  
         </>
-    )
+    );
 }
 
 export default HomePage;

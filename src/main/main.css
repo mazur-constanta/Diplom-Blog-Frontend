@@ -1,7 +1,6 @@
 .nav {
     font-family: 'Roboto', 'Arial', sans-serif; 
     display: flex;
-    position: fixed;
     justify-content: center;
     text-align: center;
     top: 0;
@@ -19,6 +18,7 @@
 
 #nav-header {
     font-weight: 450;
+    letter-spacing: 1px;
 }
 
 .nav-footer {
