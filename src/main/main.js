@@ -58,9 +58,9 @@ export default class Main extends Component {
                             <Row>
                                 <Col className="mt-5 mb-3">
                                     <h6>Телефон:
-                                    <p>(+373)60-040-080</p></h6>
+                                    <p>(+373)05-062-018</p></h6>
                                     <h6>Email:
-                                    <p>mothers.helper@gmail.com</p></h6>
+                                    <p>mothers.helper@mail.ru</p></h6>
                                 </Col>
                                 <Col className="mt-5 mb-3">
                                     <h6>Сайт разработан с целью поддержки 

@@ -7,7 +7,7 @@ const ArticlesList = ({ articles }) => (
         {articles.map((article, key) => ( 
         <Container style={{ marginTop: '20px', marginBottom: '25px'}}>
             <Row>
-                <Col md="12" style={{ flexDirection: 'column' }}>
+                <Col md="12">
                     <Media>
                         <Link to={`/articles/${article.name}`}>
                         <Image

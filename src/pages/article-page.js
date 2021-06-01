@@ -33,7 +33,7 @@ const ArticlePage = ({ match }) => {
             <h1>{matchingArticle.title}</h1>
             <img src={matchingArticle.src} alt="child" width="60%" className="mb-2" />
             <UpvotesSection upvotes={articleInfo.upvotes} articleName={name} setArticleInfo={setArticleInfo} />
-            {matchingArticle.content.map((paragraph, key) => <p key={key}>{paragraph}</p>)}
+            {matchingArticle.content.map((paragraph, key) => <p align="justify" key={key}>{paragraph}</p>)}
             <CommentsList comments={articleInfo.comments} articleName={name} setArticleInfo={setArticleInfo} />
             <h4>Другие статьи:</h4>
             <OtherArticles className="mb-5" articles={otherArticles} />

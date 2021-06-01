@@ -8,10 +8,11 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
     const addComment = async () => {
         console.log({ name, commentText });
         const response = await fetch(`/api/articles/${articleName}/add-comment`, {
-            method: 'POST',
+            method: 'post',
             body: JSON.stringify({ comment: { postedBy: name, text: commentText } }),
             headers: {
                 "Content-Type": "application/json",
+                'Accept': 'application/json'
             },
         });
         const body = await response.json();
@@ -24,15 +25,15 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
         <>
             <Container className="add-comment-form">
                 <Form className="text-center">
-                    <h4>Добавить комментарий:</h4>
+                    <h5>Добавить комментарий:</h5>
                     <Form.Group controlId="formBasicName">
-                            <Form.Label>Имя:</Form.Label>
-                            <Form.Control type="text" placeholder="Имя" value={name} onChange={(event) => setName(event.target.value)} />
+                            <Form.Label >Имя:</Form.Label>
+                            <Form.Control size="sm" type="text" placeholder="Имя" value={name} onChange={(event) => setName(event.target.value)} />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicTextarea">
                             <Form.Label>Сообщение:</Form.Label>
-                            <Form.Control as="textarea" rows="5" cols="50" placeholder="Ваше сообщение" value={commentText} onChange={(event) => setCommentText(event.target.value)} />
+                            <Form.Control size="sm" as="textarea" rows="5" cols="50" placeholder="Ваше сообщение" value={commentText} onChange={(event) => setCommentText(event.target.value)} />
                     </Form.Group>
 
                     <Button variant="secondary" type="submit" onClick={() => addComment()}>

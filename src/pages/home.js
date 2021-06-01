@@ -70,7 +70,7 @@ const HomePage = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Быть мамой - дар. Быть мамой- счастье. Быть мамой - искусство..</HeroH1>
+                <HeroH1>Быть мамой - дар. Быть мамой- счастье. Быть мамой - искусство...</HeroH1>
                 <HeroP>Целая вселенная в одном человеке. Давайте знакомиться ближе?</HeroP>
                 <Link to="/about">
                 <Button variant="outline-light" className="m-auto" id="btn-css">
