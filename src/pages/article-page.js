@@ -30,7 +30,7 @@ const ArticlePage = ({ match }) => {
     (
         <>
         <Container>
-            <h1>{matchingArticle.title}</h1>
+            <h1 className="mt-4">{matchingArticle.title}</h1>
             <img src={matchingArticle.src} alt="child" width="60%" className="mb-2" />
             <UpvotesSection upvotes={articleInfo.upvotes} articleName={name} setArticleInfo={setArticleInfo} />
             {matchingArticle.content.map((paragraph, key) => <p align="justify" key={key}>{paragraph}</p>)}

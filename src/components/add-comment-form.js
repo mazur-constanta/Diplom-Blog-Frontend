@@ -23,7 +23,7 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
 
     return (
         <>
-            <Container className="add-comment-form">
+            <Container className="add-comment-form mt-5">
                 <Form className="text-center">
                     <h5>Добавить комментарий:</h5>
                     <Form.Group controlId="formBasicName">

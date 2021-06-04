@@ -13,17 +13,28 @@
     cursor: pointer;
     font-family: 'Cabin Sketch', cursive, 'Arial', sans-serif;
     font-size: 30px;
-    color: #707070;
+    color: #404040;
 }
 
 #nav-header {
-    font-weight: 450;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     letter-spacing: 1px;
+
+}
+
+.d-inline-flex {
+    display: inline-flex;
+    justify-self: flex-end;
+    align-items: center;
 }
 
 .nav-footer {
     font-weight: 450;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     background-color: #f8f9fa;
 }
 
@@ -33,4 +44,14 @@
 
 .link-footer:hover {
     color: #404040;
+}
+
+#social a {
+    color: #404040;
+    cursor: pointer;
+}
+
+.icon {
+    height: 1.5em;
+    width: 1.5em;
 }

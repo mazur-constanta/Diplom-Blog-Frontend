@@ -1,11 +1,14 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import ArticlesList from '../components/articles-list';
 import articles from './article-content';
 
 const ArticlesListPage = () => (
     <>
-        <h1>Статьи</h1>
+    <Container>
+        <h1 className="mt-4">Статьи</h1>
         <ArticlesList articles={articles} />
+    </Container>
     </>
 )
 

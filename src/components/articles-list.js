@@ -1,29 +1,31 @@
 import React from 'react';
-import { Container, Row, Col, Media, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './articles-list.css';
 
 const ArticlesList = ({ articles }) => (
     <>
         {articles.map((article, key) => ( 
-        <Container style={{ marginTop: '20px', marginBottom: '25px'}}>
+        <Container id="articles-list">
             <Row>
-                <Col md="12">
-                    <Media>
-                        <Link to={`/articles/${article.name}`}>
-                        <Image
-                            width={230}
-                            height={150}
-                            className="mr-3"
-                            src={article.src}
-                        />
-                        </Link>
-                        <Media.Body className="text-left">
-                            <Link className="article-list-item" to={`/articles/${article.name}`} key={key} style={{ fontSize: '24px', color: '#404040', fontWeight: '500' }}>{article.title}</Link>
-                            <p>
-                                {article.content[0].substring(0, 220)}...
-                            </p>
-                        </Media.Body>
-                    </Media>
+                <Col  xs={12} md={6}>
+                    <Link to={`/articles/${article.name}`}>
+                    <Image
+                        width={250}
+                        height={160}
+                        className="mr-3"
+                        src={article.src}
+                        align="right"
+                    />
+                    </Link>
+                </Col>
+                <Col xs={10} md={5}>
+                    <Link className="article-list-item d-block" to={`/articles/${article.name}`} key={key} id="articles-title">
+                        {article.title}
+                    <p align="justify">
+                        {article.content[0].substring(0, 180)}...
+                    </p>
+                    </Link>
                 </Col>
             </Row>
         </Container>
@@ -32,6 +34,7 @@ const ArticlesList = ({ articles }) => (
 );
 
 export default ArticlesList;
+
 
 // const ArticlesList = ({ articles }) => (
 //     <>

@@ -2,25 +2,34 @@ import React from 'react';
 import { Container, Toast } from 'react-bootstrap';
 import AddCommentForm from './add-comment-form';
 
-const CommentsList = ({ comments, articleName, setArticleInfo }) => (
-        <>
-        <h5>Комментарии:</h5>
-        <Container className="align-items-center"> 
-        <Toast align="center">
-        {comments.map((comment, key) => (
-        <div  key={key} align="justify">
-                <Toast.Header closeButton={false}>
-                <strong className="mr-auto">{comment.postedBy}</strong>
-                <small>11 min ago</small>
-                </Toast.Header>
-                <Toast.Body className="mr-left">{comment.text}</Toast.Body>
-        </div>
-        ))}
-        </Toast>       
-        <AddCommentForm articleName={articleName} setArticleInfo={setArticleInfo} />    
-        </Container>
-        </>
-)
+const CommentsList = ({ comments, articleName, setArticleInfo }) => {
+
+        function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+        }
+
+        return(
+                <>        
+                <Container className="mt-4"> 
+                <h5>Комментарии:</h5>
+                <Toast style={{ display: 'inline-block', width: '50%' }}>
+                {comments.map((comment, key) => (
+                        <div  key={key} align="justify">
+                                <Toast.Header closeButton={false}>
+                                <strong className="mr-auto">{comment.postedBy}</strong>
+                                <small>{getRandomInt(60)} мин назад</small>
+                                </Toast.Header>
+                                <Toast.Body style={{ fontSize: '14px', fontWeight: '400' }}>{comment.text}</Toast.Body>
+                        </div>
+                ))}
+                </Toast>   
+                </Container>
+                <Container>    
+                <AddCommentForm articleName={articleName} setArticleInfo={setArticleInfo} />    
+                </Container>
+                </>
+        );
+}
 
 
 
