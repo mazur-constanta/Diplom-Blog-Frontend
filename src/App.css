@@ -33,12 +33,12 @@ h3, h4 {
 }
 
 .article-list-item h3 {
-  margin-top: 50px;
+  margin-top: 20px;
 
 }
 
 .article-list-item p {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   border-bottom: 1px solid black;
 }
 
@@ -55,7 +55,7 @@ h3, h4 {
 .add-comment-form {
   display: flex;
   justify-content: center;
-  margin: 70px;
+  /* margin: 3px; */
 }
 
 .add-comment-form Button {
@@ -64,5 +64,5 @@ h3, h4 {
 
 .add-comment-form Form {
   display: block;
-  width: 40%;
+  width: 45%;
 }

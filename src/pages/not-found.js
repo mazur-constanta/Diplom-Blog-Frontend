@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const NotFoundPage = () => (
     <h1>404: Страница не найдена</h1>
 )

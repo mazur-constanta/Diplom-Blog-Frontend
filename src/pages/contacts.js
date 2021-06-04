@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { Form, Container, Button } from 'react-bootstrap';
 
+
 const ContactsPage = () => {
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [usernamePast, setUsernamePast] = useState(false);
-    const [emailPast, setEmailPast] = useState(false);
-    const [messagePast, setMessagePast] = useState(false); 
+    const [usernameFocus, setUsernameFocus] = useState(false);
+    const [emailFocus, setEmailFocus] = useState(false);
+    const [messageFocus, setMessageFocus] = useState(false); 
     const [usernameEmpty, setUsernameEmpty] = useState('Это обязательно поле, пожалуйста введите своё имя.');
     const [emailEmpty, setEmailEmpty] = useState('Это обязательное поле, пожалуйста введите свой email.');
     const [messageEmpty, setMessageEmpty] = useState('Это обязательное поле, пожалуйста введите сообщение.');
@@ -56,15 +57,15 @@ const ContactsPage = () => {
     const cursorIsEmpty = (e) => {
         switch(e.target.name) {
             case 'username':
-                setUsernamePast(true)
+                setUsernameFocus(true)
                 break;
 
             case 'email':
-                setEmailPast(true)
+                setEmailFocus(true)
                 break;
 
             case 'message':
-                setMessagePast(true)
+                setMessageFocus(true)
                 break;
 
             default:
@@ -79,39 +80,43 @@ const ContactsPage = () => {
         .then((result) => {
             console.log(`Пользователь: ${username}, e-mail: ${email}, сообщение: ${message}. Статус: ${result.text}.`);
         }, (error) => {
-            console.log(`Can not send a message! Статус: ${error.text}.`);
+            console.log(`Сообщение не может быть отправлено! Статус: ${error.text}.`);
         });
         setUsername('');
         setEmail('');
         setMessage('');
     }
 
+    // onBlur - событие фокуса ( вызывается при пропадании фокуса с элемента)
+
     return(
-        <Container className="d-block w-50">
-            <h1 className="text-center mt-4 ">Свяжитесь с нами</h1>
-            <Form onSubmit={sendEmail} className="contact-form">
-                <Form.Label>Имя:</Form.Label>
-                {(usernamePast && usernameEmpty) && <div style={{color: 'red'}}>{usernameEmpty}</div>}
-                <Form.Control type="text"  name="username" placeholder="Ваше имя" value={username} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateUsername(e)} />
+        <>
+            <Container className="d-block w-50">
+                <h1 className="text-center mt-4 ">Свяжитесь с нами</h1>
+                <Form onSubmit={sendEmail} className="contact-form">
+                    <Form.Label>Имя:</Form.Label>
+                    {(usernameFocus && usernameEmpty) && <div style={{color: 'red'}}>{usernameEmpty}</div>}
+                    <Form.Control type="text"  name="username" placeholder="Ваше имя" value={username} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateUsername(e)} />
 
-                <Form.Label className="mt-2">Еmail:</Form.Label>
-                {(emailPast && emailEmpty) && <div style={{color: 'red'}}>{emailEmpty}</div>}
-                <Form.Control type="email" name="email" placeholder="Ваш email" value={email} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateEmail(e)} />
+                    <Form.Label className="mt-2">Еmail:</Form.Label>
+                    {(emailFocus && emailEmpty) && <div style={{color: 'red'}}>{emailEmpty}</div>}
+                    <Form.Control type="email" name="email" placeholder="Ваш email" value={email} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateEmail(e)} />
 
-                <Form.Label className="mt-3">Сообщение:</Form.Label>
-                {(messagePast && messageEmpty) && <div style={{color: 'red'}}>{messageEmpty}</div>}
-                <Form.Control as="textarea" name="message" rows="5" placeholder="Ваше сообщение" value={message} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateMessage(e)} />
+                    <Form.Label className="mt-3">Сообщение:</Form.Label>
+                    {(messageFocus && messageEmpty) && <div style={{color: 'red'}}>{messageEmpty}</div>}
+                    <Form.Control as="textarea" name="message" rows="5" placeholder="Ваше сообщение" value={message} onBlur={(e) => cursorIsEmpty(e)} onChange={(e) => validateMessage(e)} />
 
-                <Button type="submit" variant="secondary" className="mt-2" disabled={!formValid} onClick={formValid}>
-                    Отправить
-                </Button>
-            </Form>
+                    <Button type="submit" variant="secondary" className="mt-2" disabled={!formValid} onClick={formValid}>
+                        Отправить
+                    </Button>
+                </Form>
 
-            <h5 className="text-center mt-5 mb-5">Контактные данные
-            <h6>Р. Молдова, г. Кишинев, ул. Гренобле 120, оф. 15</h6>
-            <h6>Телефон: (+373)05-062-018</h6>
-            <h6>Почта: mothers.helper@mail.ru</h6></h5>
+                <h5 className="text-center mt-5 mb-5">Контактные данные
+                <h6>Р. Молдова, г. Кишинев, ул. Гренобле 120, оф. 15</h6>
+                <h6>Телефон: (+373)05-062-018</h6>
+                <h6>Почта: mothers.helper@mail.ru</h6></h5>
         </Container>
+        </>
     );
 }
 

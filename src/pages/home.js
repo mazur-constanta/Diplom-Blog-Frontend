@@ -1,3 +1,37 @@
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP } from './home-page-elements';
+import Video from "../images/childness.mp4";
+
+
+const HomePage = () => {
+    return (
+        <>
+            <HeroContainer>
+                <HeroBg>
+                    <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
+                </HeroBg>
+                <HeroContent>
+                    <HeroH1>Быть мамой - дар. Быть мамой- счастье. Быть мамой - искусство...</HeroH1>
+                    <HeroP>Целая вселенная в одном человеке. Давайте знакомиться ближе?</HeroP>
+                    <Link to="/about">
+                    <Button variant="outline-light" className="m-auto" id="btn-css">
+                    Больше
+                    </Button>
+                    </Link>
+                </HeroContent>
+            </HeroContainer>  
+        </>
+    );
+}
+
+export default HomePage;
+
+
+
+
+
 // import React, { Component } from 'react';
 // import { Carousel, Container, Button } from 'react-bootstrap';
 // import Child1 from './../images/1.jpg';
@@ -55,32 +89,3 @@
 //         );
 //     }
 // }
-
-import React from 'react';
-import Video from "../images/childness.mp4";
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP } from './home-page-elements';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
-const HomePage = () => {
-    return (
-        <>
-        <HeroContainer>
-            <HeroBg>
-                <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
-            </HeroBg>
-            <HeroContent>
-                <HeroH1>Быть мамой - дар. Быть мамой- счастье. Быть мамой - искусство...</HeroH1>
-                <HeroP>Целая вселенная в одном человеке. Давайте знакомиться ближе?</HeroP>
-                <Link to="/about">
-                <Button variant="outline-light" className="m-auto" id="btn-css">
-                Больше
-                </Button>
-                </Link>
-            </HeroContent>
-        </HeroContainer>  
-        </>
-    );
-}
-
-export default HomePage;

@@ -3,6 +3,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './articles-list.css';
 
+
 const ArticlesList = ({ articles }) => (
     <>
         {articles.map((article, key) => ( 

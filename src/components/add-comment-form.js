@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 
+
 const AddCommentForm = ({ articleName, setArticleInfo }) => {
     const [name, setName] = useState('');
     const [commentText, setCommentText] = useState('');
@@ -24,7 +25,7 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
     return (
         <>
             <Container className="add-comment-form mt-5">
-                <Form className="text-center">
+                <Form style={{ align: 'left' }}>
                     <h5>Добавить комментарий:</h5>
                     <Form.Group controlId="formBasicName">
                             <Form.Label >Имя:</Form.Label>

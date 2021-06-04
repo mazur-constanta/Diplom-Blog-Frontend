@@ -4,6 +4,7 @@ import img3 from './../images/3.jpg';
 import img4 from './../images/5.jpg';
 import img5 from './../images/6.jpg';
 
+
 const articles = [
     {
         _id: 1,

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import CommentsList from '../components/comments-list';
 import UpvotesSection from '../components/upvotes-section';
 import articles from './article-content';
 import NotFoundPage from '../pages/not-found';
 import OtherArticles from './other-articles.js';
-import { Container } from 'react-bootstrap';
+
 
 const ArticlePage = ({ match }) => {
     const { name } = match.params;
@@ -29,15 +30,15 @@ const ArticlePage = ({ match }) => {
     return matchingArticle ?
     (
         <>
-        <Container>
-            <h1 className="mt-4">{matchingArticle.title}</h1>
-            <img src={matchingArticle.src} alt="child" width="60%" className="mb-2" />
-            <UpvotesSection upvotes={articleInfo.upvotes} articleName={name} setArticleInfo={setArticleInfo} />
-            {matchingArticle.content.map((paragraph, key) => <p align="justify" key={key}>{paragraph}</p>)}
-            <CommentsList comments={articleInfo.comments} articleName={name} setArticleInfo={setArticleInfo} />
-            <h4>Другие статьи:</h4>
-            <OtherArticles className="mb-5" articles={otherArticles} />
-        </Container>
+            <Container>
+                <h1 className="mt-4">{matchingArticle.title}</h1>
+                <img src={matchingArticle.src} alt="child" width="60%" className="mb-2" />
+                <UpvotesSection upvotes={articleInfo.upvotes} articleName={name} setArticleInfo={setArticleInfo} />
+                {matchingArticle.content.map((paragraph, key) => <p align="justify" key={key}>{paragraph}</p>)}
+                <CommentsList comments={articleInfo.comments} articleName={name} setArticleInfo={setArticleInfo} />
+                <h4 className="mt-5 p-0">Другие статьи:</h4>
+                <OtherArticles articles={otherArticles} />
+            </Container>
         </>
     ) : (
         <NotFoundPage />

@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import ArticlesList from '../components/articles-list';
 import articles from './article-content';
 
+
 const ArticlesListPage = () => (
     <>
     <Container>
