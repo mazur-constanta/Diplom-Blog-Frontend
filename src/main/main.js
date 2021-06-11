@@ -15,34 +15,48 @@ export default class Main extends Component {
     render() {
         return (
             <>
-                <Container>
+                <Container id="navbar-css-format">
                     <Row>
-                    <Navbar fixed="top"  expand="lg" variant="light" bg="light" id="nav">
-                    <Col>
-                    <Navbar.Brand href="/" className="ml-auto" id="brand"> 
-                        HappyMom
-                    </Navbar.Brand>
-                    </Col>
-                    <Navbar.Toggle aria-controls="resonsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Col>
-                        <Nav className="d-inline-flex ml-auto" id="nav-header">
-                            <Nav.Link href="/" className="mr-5">ГЛАВНАЯ</Nav.Link>
-                            <Nav.Link href="/about" className="mr-5">О НАС</Nav.Link>
-                            <Nav.Link href="/articles" className="mr-5">СТАТЬИ</Nav.Link>
-                            <Nav.Link href="/contacts" className="mr-5">КОНТАКТЫ</Nav.Link>
-                        </Nav>  
+                        <Navbar collapseOnSelect fixed="top"  expand="lg" variant="light" bg="light" >
+                        <Col xs={10} md={2}>
+                            <Navbar.Brand href="/" className="" id="brand"> 
+                                HappyMom
+                            </Navbar.Brand>
                         </Col>
-                    <Row>
-                    <Col className="d-inline-flex ml-5" id="social" >
-                            <NavLink href="https://www.facebook.com/" target="_blank" title="facebook"><FaFacebook className="icon" /></NavLink>
-                            <NavLink href="https://www.instagram.com/" target="_blank" title="instagram"><FaInstagram className="icon" /></NavLink>
-                            <NavLink href="https://twitter.com/" target="_blank" title="twitter"><FaTwitter className="icon" /></NavLink>
-                            <NavLink href="https://ok.ru/" target="_blank" title="odnoklassniki"><FaOdnoklassniki className="icon" /></NavLink>
-                </Col> 
-                    </Row>
-                    </Navbar.Collapse>
-                    </Navbar>
+                        <Navbar.Toggle aria-controls="resonsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Col xs={12} md={10}>
+                            <Nav className="" id="nav-header">
+                                <Col>
+                                    <Nav.Link href="/" className="">ГЛАВНАЯ</Nav.Link>
+                                </Col>
+                                <Col>
+                                    <Nav.Link href="/about" className="">О НАС</Nav.Link>
+                                </Col>
+                                <Col>
+                                    <Nav.Link href="/articles" className="">СТАТЬИ</Nav.Link>
+                                </Col>
+                                <Col>
+                                    <Nav.Link href="/contacts" className="">КОНТАКТЫ</Nav.Link>
+                                </Col>
+                            </Nav>  
+                            </Col>
+                            <Col className="d-inline-flex" id="social" xs={6} md={1} >
+                                <Col>
+                                    <NavLink href="https://www.facebook.com/" target="_blank" title="facebook"><FaFacebook className="icon" /></NavLink>
+                                </Col>
+                                <Col>
+                                    <NavLink href="https://www.instagram.com/" target="_blank" title="instagram"><FaInstagram className="icon" /></NavLink>
+                                </Col>
+                                <Col>
+                                    <NavLink href="https://twitter.com/" target="_blank" title="twitter"><FaTwitter className="icon" /></NavLink>
+                                </Col>
+                                <Col>
+                                    <NavLink href="https://ok.ru/" target="_blank" title="odnoklassniki"><FaOdnoklassniki className="icon" /></NavLink>
+                                </Col>   
+                            </Col> 
+                        </Navbar.Collapse>
+                        </Navbar>
                     </Row>
                 </Container>
 

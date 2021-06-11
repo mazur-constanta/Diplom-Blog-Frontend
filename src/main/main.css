@@ -1,9 +1,7 @@
-.nav {
+#navbar-css-format {
     font-family: 'Roboto', 'Arial', sans-serif; 
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    top: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #brand {
@@ -23,7 +21,7 @@
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
-
+    margin: 0 10px 0 0;
 }
 
 .d-inline-flex {
@@ -52,6 +50,11 @@
 }
 
 .icon {
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.nav-link {
+    padding: 0;
+    margin: 0 auto;
 }
